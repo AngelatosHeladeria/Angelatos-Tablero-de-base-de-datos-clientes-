@@ -5,6 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Angelatos Executive Dashboard | Precision Vitality</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -85,7 +86,7 @@
 <aside class="h-screen w-72 fixed left-0 top-0 z-40 bg-[#f8f9fa] dark:bg-slate-950 shadow-[20px_0_40px_rgba(25,28,29,0.02)] flex flex-col py-8 font-['Manrope'] antialiased tracking-tight">
 <!-- Brand Header -->
 <div class="px-10 mb-12 flex items-center gap-3">
-<img alt="Angelatos Logo" class="h-10 w-auto object-contain" data-alt="high-end minimalist logo for a luxury food brand featuring elegant serif typography and a subtle red emblem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6lyHOc-z1D4NWH_WKPOtyhBpkX74iB2twcLBzBP0mgnxNccIIHj-PvuD1y7gynm7csajF_8eWP19JRtAgAVieXF1Rmsc9i1Pqcw4NH6wJHXKwEKxrnXfys4n2ygVBAtK09A2FnXVGEV-XgOmbSqPD5VmqVsJHOIjzDwapNE9wKx9OBZy_2oO-2oRM-cU-Ymsl9lZqo1mvQUc3jR6EMxhB6Cv7tt3EcWujs92NKrash1-g3QF1pOvDKJCN9uHnVz9hpPBnhMbV1kXQ"/>
+<img alt="Angelatos Logo" class="h-10 w-auto object-contain" data-alt="high-end minimalist logo for a luxury food brand featuring elegant serif typography and a subtle red emblem" src="https://i.ibb.co/NBT4FwK/Whats-App-Image-2026-03-26-at-4-18-10-PM.jpg"/>
 <div class="flex flex-col">
 <span class="text-2xl font-black tracking-tighter text-[#191c1d] dark:text-white">Angelatos</span>
 <span class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60 font-bold">Precision Vitality</span>
@@ -124,7 +125,7 @@
 <!-- TopAppBar Shell -->
 <header class="fixed top-0 right-0 left-72 h-20 z-30 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-[#191c1d]/5 dark:border-white/5 flex justify-between items-center px-10 font-['Manrope'] font-semibold">
 <div class="flex items-center gap-8">
-<h1 class="text-xl font-bold text-on-surface">Executive Dashboard</h1>
+<h1 class="text-xl font-bold text-on-surface">Dashboard Ejecutivo</h1>
 <nav class="hidden md:flex gap-6">
 <a class="text-[#a60012] border-b-2 border-[#a60012] pb-1" href="#">Overview</a>
 <a class="text-[#4e6073] dark:text-slate-400 hover:text-[#191c1d] dark:hover:text-white transition-colors" href="#">Regional</a>
@@ -155,13 +156,13 @@
 <!-- Dashboard Header Context -->
 <div class="mb-10 flex justify-between items-end">
 <div>
-<p class="text-primary font-bold tracking-widest text-xs uppercase mb-1">Portfolio performance</p>
-<h2 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface italic">Client Intelligence Analysis</h2>
+<p class="text-primary font-bold tracking-widest text-xs uppercase mb-1">Rendimiento del portafolio</p>
+<h2 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface italic">Análisis de Inteligencia de Clientes</h2>
 </div>
 <div class="flex gap-4">
 <button class="px-5 py-2 rounded-lg bg-surface-container-highest/50 text-on-surface font-semibold text-sm flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
 <span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
-                    Last 30 Days
+                    Últimos 30 Días
                 </button>
 <button class="px-5 py-2 rounded-lg bg-primary text-on-primary font-semibold text-sm flex items-center gap-2 shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
 <span class="material-symbols-outlined text-lg" data-icon="file_download">file_download</span>
@@ -177,47 +178,46 @@
 <div class="p-3 bg-primary/5 rounded-lg text-primary">
 <span class="material-symbols-outlined" data-icon="group">group</span>
 </div>
-<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">+12% vs LY</span>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">+63% Alta Freq</span>
 </div>
-<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Total Active Clients</h3>
+<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Total Clientes Activos</h3>
 <div class="flex items-baseline gap-2">
-<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">1,284</span>
-<span class="text-on-surface-variant/40 text-sm font-medium">Entities</span>
+<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">87</span>
+<span class="text-on-surface-variant/40 text-sm font-medium">Clientes</span>
 </div>
 <div class="mt-6 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[78%]" style="width: 78.5%;"></div>
+<div class="bg-primary h-full" style="width: 63.2%;"></div>
 </div>
 </div>
-<!-- KPI 2: Average Ticket -->
+<!-- KPI 2: Plato más pedido -->
 <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
 <div class="flex justify-between items-start mb-6">
 <div class="p-3 bg-primary/5 rounded-lg text-primary">
-<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
 </div>
-<span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">Target: $15k</span>
+<span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">34 clientes</span>
 </div>
-<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Average Ticket Value</h3>
+<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Plato más popular</h3>
 <div class="flex items-baseline gap-2">
-<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">$12,500</span>
-<span class="text-on-surface-variant/40 text-sm font-medium">USD</span>
+<span class="text-3xl font-headline font-black text-on-surface tracking-tighter">FAMILY BOX</span>
 </div>
 <div class="mt-6 flex items-center gap-2">
-<span class="text-xs text-on-surface-variant/60 font-medium italic">Efficiency optimization active</span>
+<span class="text-xs text-on-surface-variant/60 font-medium italic">39.1% del total de clientes lo prefieren</span>
 </div>
 </div>
-<!-- KPI 3: Best Month -->
+<!-- KPI 3: Frecuencia dominante -->
 <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
 <div class="flex justify-between items-start mb-6">
 <div class="p-3 bg-primary/5 rounded-lg text-primary">
-<span class="material-symbols-outlined" data-icon="stars" data-weight="fill" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="material-symbols-outlined" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
 </div>
 </div>
-<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Peak Performance Cycle</h3>
+<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Frecuencia Dominante</h3>
 <div class="flex items-baseline gap-2">
-<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">December</span>
+<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">Semanal</span>
 </div>
 <div class="mt-6 text-on-surface-variant text-sm font-medium">
-                    Consistently driving <span class="text-primary font-bold">22%</span> of annual revenue.
+                    Representa el <span class="text-primary font-bold">44.8%</span> de la base de clientes (39 personas).
                 </div>
 </div>
 </div>
@@ -227,80 +227,54 @@
 <div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)]">
 <div class="flex justify-between items-center mb-10">
 <div>
-<h4 class="text-xl font-headline font-extrabold text-on-surface">Consumption Frequency Leaderboard</h4>
-<p class="text-on-surface-variant text-sm mt-1 italic">High-velocity items tracked by daily/weekly volume.</p>
+<h4 class="text-xl font-headline font-extrabold text-on-surface">Ranking de Platos por Popularidad</h4>
+<p class="text-on-surface-variant text-sm mt-1 italic">Número de clientes que prefieren cada plato.</p>
 </div>
 <div class="flex gap-2">
 <span class="w-3 h-3 rounded-full bg-primary"></span>
 <span class="w-3 h-3 rounded-full bg-tertiary"></span>
 </div>
 </div>
-<!-- Mock Chart Canvas with Tailwind representation -->
-<div class="relative h-[300px] w-full flex items-end gap-6 px-4">
-<!-- Grid Lines -->
-<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
-<div class="border-t border-outline-variant/10 w-full h-0"></div>
-<div class="border-t border-outline-variant/10 w-full h-0"></div>
-<div class="border-t border-outline-variant/10 w-full h-0"></div>
-<div class="border-t border-outline-variant/10 w-full h-0"></div>
-<div class="border-t border-outline-variant/20 w-full h-0"></div>
-</div>
-<!-- Bars -->
-<div class="flex-1 flex flex-col justify-end group cursor-pointer">
-<div class="bg-primary/90 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 90%;"></div>
-<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Signature Pasta</p>
-</div>
-<div class="flex-1 flex flex-col justify-end group cursor-pointer">
-<div class="bg-primary/70 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 75%;"></div>
-<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Vitality Salad</p>
-</div>
-<div class="flex-1 flex flex-col justify-end group cursor-pointer">
-<div class="bg-primary/50 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 82%;"></div>
-<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Ribeye Prime</p>
-</div>
-<div class="flex-1 flex flex-col justify-end group cursor-pointer">
-<div class="bg-primary/40 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 60%;"></div>
-<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Atlantic Salmon</p>
-</div>
-<div class="flex-1 flex flex-col justify-end group cursor-pointer">
-<div class="bg-primary/30 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 45%;"></div>
-<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Wild Mushroom</p>
-</div>
-<div class="flex-1 flex flex-col justify-end group cursor-pointer">
-<div class="bg-primary/20 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 38%;"></div>
-<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Greek Mezze</p>
-</div>
+<div class="relative h-[300px] w-full">
+<canvas id="chartBarPlatos"></canvas>
 </div>
 </div>
 <!-- Customer Loyalty Split -->
 <div class="col-span-12 lg:col-span-4 bg-surface-container-low p-10 rounded-xl relative overflow-hidden group">
 <div class="relative z-10 h-full flex flex-col">
-<h4 class="text-xl font-headline font-extrabold text-on-surface mb-2">Visit Elasticity</h4>
-<p class="text-on-surface-variant text-sm mb-8">Split between habitual and occasional patrons.</p>
-<div class="flex-1 flex items-center justify-center py-6">
-<div class="relative w-48 h-48 rounded-full border-[16px] border-primary flex items-center justify-center">
-<!-- Inset Hole for Doughnut feel -->
-<div class="absolute inset-0 border-[16px] border-tertiary border-l-transparent border-t-transparent -rotate-45"></div>
-<div class="flex flex-col items-center">
-<span class="text-3xl font-black text-on-surface">64%</span>
-<span class="text-[10px] uppercase font-bold text-on-surface-variant/60">High Freq</span>
+<h4 class="text-xl font-headline font-extrabold text-on-surface mb-2">Elasticidad de Visita</h4>
+<p class="text-on-surface-variant text-sm mb-4">Distribución de frecuencia de consumo.</p>
+<div class="flex-1 flex items-center justify-center py-4">
+<canvas id="chartDonutFreq" style="max-height:220px;"></canvas>
 </div>
-</div>
-</div>
-<div class="space-y-4 mt-6">
+<div class="space-y-3 mt-4">
 <div class="flex items-center justify-between">
 <div class="flex items-center gap-2">
 <div class="w-3 h-3 rounded-full bg-primary"></div>
-<span class="text-xs font-bold text-on-surface-variant">Daily/Weekly</span>
+<span class="text-xs font-bold text-on-surface-variant">Diario</span>
 </div>
-<span class="text-xs font-black">64.2%</span>
+<span class="text-xs font-black">18.4% (16)</span>
 </div>
 <div class="flex items-center justify-between">
 <div class="flex items-center gap-2">
 <div class="w-3 h-3 rounded-full bg-tertiary"></div>
-<span class="text-xs font-bold text-on-surface-variant">Fortnightly/Monthly</span>
+<span class="text-xs font-bold text-on-surface-variant">Semanal</span>
 </div>
-<span class="text-xs font-black">35.8%</span>
+<span class="text-xs font-black">44.8% (39)</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full" style="background:#f59e0b;"></div>
+<span class="text-xs font-bold text-on-surface-variant">Quincenal</span>
+</div>
+<span class="text-xs font-black">27.6% (24)</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full" style="background:#6b7280;"></div>
+<span class="text-xs font-bold text-on-surface-variant">Mensual</span>
+</div>
+<span class="text-xs font-black">9.2% (8)</span>
 </div>
 </div>
 </div>
@@ -313,18 +287,18 @@
 <div class="col-span-12 bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)]">
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
 <div>
-<h4 class="text-xl font-headline font-extrabold text-on-surface uppercase tracking-tight">Acquisition Retention Drivers</h4>
-<p class="text-on-surface-variant text-sm">Dishes that motivate low-frequency visitors to return.</p>
+<h4 class="text-xl font-headline font-extrabold text-on-surface uppercase tracking-tight">Platos de Retención (Baja Frecuencia)</h4>
+<p class="text-on-surface-variant text-sm">Platos que motivan la visita de clientes quincenales y mensuales.</p>
 </div>
 <div class="flex items-center gap-6">
 <div class="flex flex-col items-end">
-<span class="text-[10px] font-bold text-on-surface-variant uppercase">Key Performance Driver</span>
-<span class="text-primary font-black text-lg">Truffle Risotto</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Motor de Retención Principal</span>
+<span class="text-primary font-black text-lg">ENSALADA DE FRUTAS</span>
 </div>
 <div class="h-10 w-[1px] bg-outline-variant/30"></div>
 <div class="flex flex-col items-end">
-<span class="text-[10px] font-bold text-on-surface-variant uppercase">Total Occasional Vol.</span>
-<span class="text-on-surface font-black text-lg">4,120 Orders</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Total Clientes Baja Freq.</span>
+<span class="text-on-surface font-black text-lg">32 Clientes</span>
 </div>
 </div>
 </div>
@@ -332,43 +306,43 @@
 <!-- Horizontal Data Bar 1 -->
 <div class="space-y-2">
 <div class="flex justify-between items-center text-xs font-black text-on-surface uppercase tracking-tighter px-1">
-<span>Truffle Risotto</span>
-<span>88% Efficiency</span>
+<span>ENSALADA DE FRUTAS</span>
+<span>15 Quincenales + 12 Mensuales</span>
 </div>
 <div class="h-8 bg-surface-container rounded-full overflow-hidden flex">
-<div class="h-full bg-gradient-to-r from-tertiary to-tertiary-container w-[88%] rounded-r-full flex items-center px-4">
-<span class="text-[10px] text-white font-bold">PRIMARY RETENTION HOOK</span>
+<div class="h-full bg-gradient-to-r from-tertiary to-tertiary-container rounded-r-full flex items-center px-4" style="width:84%;">
+<span class="text-[10px] text-white font-bold">MOTOR DE RETENCIÓN</span>
 </div>
 </div>
 </div>
 <!-- Horizontal Data Bar 2 -->
 <div class="space-y-2">
 <div class="flex justify-between items-center text-xs font-black text-on-surface uppercase tracking-tighter px-1">
-<span>Seared Scallops</span>
-<span>72% Efficiency</span>
+<span>FAMILY BOX</span>
+<span>13 Quincenales + 8 Mensuales</span>
 </div>
 <div class="h-8 bg-surface-container rounded-full overflow-hidden flex">
-<div class="h-full bg-gradient-to-r from-tertiary/70 to-tertiary-container/70 w-[72%] rounded-r-full flex items-center px-4"></div>
+<div class="h-full bg-gradient-to-r from-tertiary/70 to-tertiary-container/70 rounded-r-full flex items-center px-4" style="width:62%;"></div>
 </div>
 </div>
 <!-- Horizontal Data Bar 3 -->
 <div class="space-y-2">
 <div class="flex justify-between items-center text-xs font-black text-on-surface uppercase tracking-tighter px-1">
-<span>Roasted Duck Breast</span>
-<span>65% Efficiency</span>
+<span>BOX BURGER</span>
+<span>6 Quincenales + 5 Mensuales</span>
 </div>
 <div class="h-8 bg-surface-container rounded-full overflow-hidden flex">
-<div class="h-full bg-gradient-to-r from-tertiary/50 to-tertiary-container/50 w-[65%] rounded-r-full flex items-center px-4"></div>
+<div class="h-full bg-gradient-to-r from-tertiary/50 to-tertiary-container/50 rounded-r-full flex items-center px-4" style="width:55%;"></div>
 </div>
 </div>
 <!-- Horizontal Data Bar 4 -->
 <div class="space-y-2">
 <div class="flex justify-between items-center text-xs font-black text-on-surface uppercase tracking-tighter px-1">
-<span>Artisanal Cheese Board</span>
-<span>42% Efficiency</span>
+<span>BOX BURGER (Diario)</span>
+<span>31 clientes consumen diariamente</span>
 </div>
 <div class="h-8 bg-surface-container rounded-full overflow-hidden flex">
-<div class="h-full bg-gradient-to-r from-tertiary/30 to-tertiary-container/30 w-[42%] rounded-r-full flex items-center px-4"></div>
+<div class="h-full bg-gradient-to-r from-tertiary/30 to-tertiary-container/30 rounded-r-full flex items-center px-4" style="width:40%;"></div>
 </div>
 </div>
 </div>
@@ -376,69 +350,24 @@
 <!-- Deep Dive Data Table Segment -->
 <div class="col-span-12 bg-surface p-10 rounded-xl border border-outline-variant/10">
 <div class="flex justify-between items-center mb-8">
-<h4 class="text-sm font-bold text-on-surface uppercase tracking-widest">Client Transaction Granularity</h4>
+<h4 class="text-sm font-bold text-on-surface uppercase tracking-widest">Granularidad de Transacciones por Cliente</h4>
 <button class="text-primary text-xs font-black flex items-center gap-1 hover:underline">
-                        View Audit Log <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+                        Ver Registro Completo <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
 </button>
 </div>
 <div class="overflow-x-auto">
 <table class="w-full text-left text-sm">
 <thead>
 <tr class="text-on-surface-variant/40 border-b border-outline-variant/10">
-<th class="pb-4 font-bold uppercase text-[10px]">Client ID</th>
-<th class="pb-4 font-bold uppercase text-[10px]">Tier</th>
-<th class="pb-4 font-bold uppercase text-[10px]">Last Visit</th>
-<th class="pb-4 font-bold uppercase text-[10px]">Frequency</th>
-<th class="pb-4 font-bold uppercase text-[10px]">LTV Prediction</th>
-<th class="pb-4 font-bold uppercase text-[10px] text-right">Revenue</th>
+<th class="pb-4 font-bold uppercase text-[10px]">Nombre</th>
+<th class="pb-4 font-bold uppercase text-[10px]">WhatsApp</th>
+<th class="pb-4 font-bold uppercase text-[10px]">Plato Favorito</th>
+<th class="pb-4 font-bold uppercase text-[10px]">Frecuencia</th>
+<th class="pb-4 font-bold uppercase text-[10px]">Categoría</th>
+<th class="pb-4 font-bold uppercase text-[10px] text-right">Estado LTV</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant/5">
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="py-4 font-semibold">#7721-ANG</td>
-<td class="py-4">
-<span class="px-2 py-1 bg-primary/10 text-primary rounded-md text-[10px] font-bold">PLATINUM</span>
-</td>
-<td class="py-4 text-on-surface-variant">2h ago</td>
-<td class="py-4 text-on-surface-variant">Daily</td>
-<td class="py-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
-<span class="text-xs font-medium">Excellent</span>
-</div>
-</td>
-<td class="py-4 text-right font-black">$42,100</td>
-</tr>
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="py-4 font-semibold">#8812-ANG</td>
-<td class="py-4">
-<span class="px-2 py-1 bg-tertiary/10 text-tertiary rounded-md text-[10px] font-bold">SILVER</span>
-</td>
-<td class="py-4 text-on-surface-variant">3d ago</td>
-<td class="py-4 text-on-surface-variant">Weekly</td>
-<td class="py-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
-<span class="text-xs font-medium">Growth</span>
-</div>
-</td>
-<td class="py-4 text-right font-black">$12,450</td>
-</tr>
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="py-4 font-semibold">#1209-ANG</td>
-<td class="py-4">
-<span class="px-2 py-1 bg-on-surface-variant/10 text-on-surface-variant rounded-md text-[10px] font-bold">MEMBER</span>
-</td>
-<td class="py-4 text-on-surface-variant">14d ago</td>
-<td class="py-4 text-on-surface-variant">Monthly</td>
-<td class="py-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-amber-500"></div>
-<span class="text-xs font-medium">Stable</span>
-</div>
-</td>
-<td class="py-4 text-right font-black">$3,200</td>
-</tr>
+<tbody id="clientTableBody" class="divide-y divide-outline-variant/5">
 </tbody>
 </table>
 </div>
@@ -449,7 +378,227 @@
 <div class="fixed bottom-10 right-10 z-50">
 <button class="flex items-center gap-3 bg-on-surface text-surface py-4 px-6 rounded-full shadow-2xl hover:bg-primary transition-all duration-300 group">
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500" data-icon="sync">sync</span>
-<span class="font-bold text-sm">Synchronize Fleet Data</span>
+<span class="font-bold text-sm">Sincronizar Datos</span>
 </button>
 </div>
+
+<script>
+// ─── DATASET COMPLETO ────────────────────────────────────────────────────────
+const clientes = [
+  {nombre:"JUAN FLOREZ",     wa:"3781696054", plato:"FAMILY BOX",         freq:"Diario"},
+  {nombre:"JORGE CASTRO",    wa:"3078460791", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"CAMILA SILVA",    wa:"3215116001", plato:"ENSALADA DE FRUTAS", freq:"Quincenal"},
+  {nombre:"DIANA RODRIGUEZ", wa:"3982824458", plato:"FAMILY BOX",         freq:"Diario"},
+  {nombre:"KEVIN GOMEZ",     wa:"3344415036", plato:"FAMILY BOX",         freq:"Diario"},
+  {nombre:"MARIA SALAZAR",   wa:"3786539700", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"MIGUEL ORTIZ",    wa:"3478141150", plato:"ENSALADA DE FRUTAS", freq:"Quincenal"},
+  {nombre:"DANIEL MARTINEZ", wa:"3797244283", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"KEVIN ORTIZ",     wa:"3829719210", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"DAVID HERNANDEZ", wa:"3477515391", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"SOFIA GOMEZ",     wa:"3937439254", plato:"FAMILY BOX",         freq:"Quincenal"},
+  {nombre:"JORGE PEREZ",     wa:"3435162219", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"CARLOS LOPEZ",    wa:"3480226387", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"KEVIN RAMIREZ",   wa:"3437013120", plato:"ENSALADA DE FRUTAS", freq:"Mensual"},
+  {nombre:"VALENTINA LOPEZ", wa:"3315041329", plato:"ENSALADA DE FRUTAS", freq:"Diario"},
+  {nombre:"DIANA RUIZ",      wa:"3598042946", plato:"FAMILY BOX",         freq:"Diario"},
+  {nombre:"LAURA ORTIZ",     wa:"3757066709", plato:"FAMILY BOX",         freq:"Quincenal"},
+  {nombre:"CARLOS ACOSTA",   wa:"3637027933", plato:"ENSALADA DE FRUTAS", freq:"Quincenal"},
+  {nombre:"ANDRES RODRIGUEZ",wa:"3294652391", plato:"FAMILY BOX",         freq:"Diario"},
+  {nombre:"VALENTINA FLOREZ",wa:"3542863591", plato:"FAMILY BOX",         freq:"Diario"},
+  {nombre:"DIANA PEREZ",     wa:"3067156527", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"PAULA HERNANDEZ", wa:"3435815850", plato:"ENSALADA DE FRUTAS", freq:"Mensual"},
+  {nombre:"LUIS VARGAS",     wa:"3144673731", plato:"ENSALADA DE FRUTAS", freq:"Quincenal"},
+  {nombre:"PAULA SILVA",     wa:"3558127760", plato:"ENSALADA DE FRUTAS", freq:"Diario"},
+  {nombre:"KEVIN MARTINEZ",  wa:"3604776899", plato:"FAMILY BOX",         freq:"Quincenal"},
+  {nombre:"DAVID SALAZAR",   wa:"3071438815", plato:"ENSALADA DE FRUTAS", freq:"Mensual"},
+  {nombre:"DIANA LOPEZ",     wa:"3957929821", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"FERNANDO TORRES", wa:"3155704535", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"VALENTINA VARGAS",wa:"3095286964", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"SOFIA RODRIGUEZ", wa:"3500249203", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"DIANA TORRES",    wa:"3314561715", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"LAURA VARGAS",    wa:"3503682453", plato:"FAMILY BOX",         freq:"Quincenal"},
+  {nombre:"NATALIA QUINTERO",wa:"3472112448", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"CAMILA MORALES",  wa:"3942345194", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"SOFIA ACOSTA",    wa:"3972944450", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"DANIEL PARRA",    wa:"3572185920", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"ANA SALAZAR",     wa:"3478001878", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"DIANA VELEZ",     wa:"3438107991", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"KAREN MARTINEZ",  wa:"3391422477", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"DAVID RODRIGUEZ", wa:"3553746758", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"DIANA QUINTERO",  wa:"3094041851", plato:"ENSALADA DE FRUTAS", freq:"Mensual"},
+  {nombre:"NATALIA VARGAS",  wa:"3447086323", plato:"FAMILY BOX",         freq:"Mensual"},
+  {nombre:"DIANA HERNANDEZ", wa:"3651823365", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"ANDRES LOPEZ",    wa:"3229065343", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"JUAN GOMEZ",      wa:"3193140828", plato:"ENSALADA DE FRUTAS", freq:"Diario"},
+  {nombre:"JORGE HERNANDEZ", wa:"3863675454", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"MIGUEL HERNANDEZ",wa:"3494261846", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"PAULA GOMEZ",     wa:"3223130331", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"MIGUEL RAMIREZ",  wa:"3576195087", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"MIGUEL RODRIGUEZ",wa:"3756567895", plato:"BOX BURGER",         freq:"Mensual"},
+  {nombre:"MIGUEL VARGAS",   wa:"3189486167", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"NATALIA FLOREZ",  wa:"3840423413", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"CARLOS VARGAS",   wa:"3198144275", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"DIANA SALAZAR",   wa:"3995056101", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"CARLOS VELEZ",    wa:"3494572474", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"DAVID VARGAS",    wa:"3024675973", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"JORGE RUIZ",      wa:"3912237149", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"LAURA VELEZ",     wa:"3673219723", plato:"FAMILY BOX",         freq:"Mensual"},
+  {nombre:"CARLOS MORALES",  wa:"3431263257", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"LUIS VELEZ",      wa:"3212980271", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"JORGE RAMIREZ",   wa:"3450170880", plato:"FAMILY BOX",         freq:"Quincenal"},
+  {nombre:"LAURA HERNANDEZ", wa:"3356290612", plato:"BOX BURGER",         freq:"Diario"},
+  {nombre:"DIANA ORTIZ",     wa:"3209326057", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"ANA MARTINEZ",    wa:"3034074186", plato:"FAMILY BOX",         freq:"Mensual"},
+  {nombre:"JORGE RODRIGUEZ", wa:"3917641946", plato:"FAMILY BOX",         freq:"Mensual"},
+  {nombre:"DANIEL RAMIREZ",  wa:"3601448882", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"KEVIN VELEZ",     wa:"3119966119", plato:"ENSALADA DE FRUTAS", freq:"Mensual"},
+  {nombre:"ANA SILVA",       wa:"3058944402", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"FERNANDO PEREZ",  wa:"3284833754", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"PAULA MARTINEZ",  wa:"3667885077", plato:"FAMILY BOX",         freq:"Semanal"},
+  {nombre:"PAULA VARGAS",    wa:"3628424515", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"SOFIA PARRA",     wa:"3686944183", plato:"ENSALADA DE FRUTAS", freq:"Mensual"},
+  {nombre:"JORGE SILVA",     wa:"3007036091", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"DAVID PARRA",     wa:"3571239323", plato:"FAMILY BOX",         freq:"Diario"},
+  {nombre:"CAMILA MARTINEZ", wa:"3180296455", plato:"BOX BURGER",         freq:"Mensual"},
+  {nombre:"SOFIA VARGAS",    wa:"3032719942", plato:"ENSALADA DE FRUTAS", freq:"Semanal"},
+  {nombre:"DIANA ACOSTA",    wa:"3283112198", plato:"BOX BURGER",         freq:"Mensual"},
+  {nombre:"KAREN FLOREZ",    wa:"3890156974", plato:"BOX BURGER",         freq:"Diario"},
+  {nombre:"ANDRES MORALES",  wa:"3050703001", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"ANA TORRES",      wa:"3947199700", plato:"BOX BURGER",         freq:"Quincenal"},
+  {nombre:"FERNANDO QUINTERO",wa:"3920435305",plato:"ENSALADA DE FRUTAS", freq:"Quincenal"},
+  {nombre:"ANA VARGAS",      wa:"3781803671", plato:"BOX BURGER",         freq:"Semanal"},
+  {nombre:"FERNANDO ACOSTA", wa:"3284969833", plato:"FAMILY BOX",         freq:"Mensual"},
+  {nombre:"MARIA RUIZ",      wa:"3936326171", plato:"ENSALADA DE FRUTAS", freq:"Mensual"},
+  {nombre:"FERNANDO SALAZAR",wa:"3214040723", plato:"ENSALADA DE FRUTAS", freq:"Quincenal"},
+  {nombre:"DANIEL VARGAS",   wa:"3722371657", plato:"ENSALADA DE FRUTAS", freq:"Quincenal"},
+  {nombre:"CARLOS TORRES",   wa:"3607515445", plato:"ENSALADA DE FRUTAS", freq:"Mensual"}
+];
+
+// ─── CONTEO DE PLATOS ────────────────────────────────────────────────────────
+const conteoPlatos = {};
+clientes.forEach(c => {
+  conteoPlatos[c.plato] = (conteoPlatos[c.plato] || 0) + 1;
+});
+const platosOrdenados = Object.entries(conteoPlatos)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 10);
+
+// ─── CHART 1: BARRAS – TOP 10 PLATOS ─────────────────────────────────────────
+(function() {
+  const ctx = document.getElementById('chartBarPlatos').getContext('2d');
+  const alpha = [1, 0.88, 0.78, 0.68, 0.58, 0.50, 0.44, 0.38, 0.32, 0.26];
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: platosOrdenados.map(([p]) => p),
+      datasets: [{
+        label: 'Clientes',
+        data: platosOrdenados.map(([, v]) => v),
+        backgroundColor: platosOrdenados.map((_, i) => `rgba(166,0,18,${alpha[i]})`),
+        borderRadius: 6,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.parsed.y} cliente${ctx.parsed.y > 1 ? 's' : ''}`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: {
+            font: { family: 'Inter', size: 10, weight: 'bold' },
+            color: '#5d3f3c',
+            maxRotation: 30,
+          }
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: 'rgba(231,189,184,0.15)' },
+          ticks: {
+            stepSize: 1,
+            font: { family: 'Inter', size: 10 },
+            color: '#5d3f3c'
+          }
+        }
+      }
+    }
+  });
+})();
+
+// ─── CHART 2: DONUT – FRECUENCIAS ────────────────────────────────────────────
+(function() {
+  const freqCount = {Diario:0, Semanal:0, Quincenal:0, Mensual:0};
+  clientes.forEach(c => freqCount[c.freq]++);
+  const ctx = document.getElementById('chartDonutFreq').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Diario', 'Semanal', 'Quincenal', 'Mensual'],
+      datasets: [{
+        data: [freqCount.Diario, freqCount.Semanal, freqCount.Quincenal, freqCount.Mensual],
+        backgroundColor: ['#a60012', '#005390', '#f59e0b', '#6b7280'],
+        borderWidth: 3,
+        borderColor: '#f8f9fa',
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      cutout: '68%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.label}: ${ctx.parsed} clientes (${((ctx.parsed/87)*100).toFixed(1)}%)`
+          }
+        }
+      }
+    }
+  });
+})();
+
+// ─── TABLA DE CLIENTES ───────────────────────────────────────────────────────
+(function() {
+  const tierMap = { Diario:'PLATINUM', Semanal:'GOLD', Quincenal:'SILVER', Mensual:'MEMBER' };
+  const tierStyle = {
+    PLATINUM: 'bg-primary/10 text-primary',
+    GOLD:     'bg-amber-100 text-amber-700',
+    SILVER:   'bg-tertiary/10 text-tertiary',
+    MEMBER:   'bg-on-surface-variant/10 text-on-surface-variant'
+  };
+  const ltvMap = { Diario:['bg-emerald-500','Alto'], Semanal:['bg-emerald-500','Crecimiento'], Quincenal:['bg-amber-500','Estable'], Mensual:['bg-red-400','En Riesgo'] };
+
+  const tbody = document.getElementById('clientTableBody');
+  clientes.forEach((c, i) => {
+    const tier = tierMap[c.freq];
+    const [dot, ltvLabel] = ltvMap[c.freq];
+    const tr = document.createElement('tr');
+    tr.className = 'hover:bg-surface-container-low/50 transition-colors';
+    tr.innerHTML = `
+      <td class="py-4 font-semibold">${c.nombre}</td>
+      <td class="py-4 text-on-surface-variant font-mono text-xs">+57 ${c.wa}</td>
+      <td class="py-4 text-on-surface-variant">${c.plato}</td>
+      <td class="py-4 text-on-surface-variant">${c.freq}</td>
+      <td class="py-4">
+        <span class="px-2 py-1 ${tierStyle[tier]} rounded-md text-[10px] font-bold">${tier}</span>
+      </td>
+      <td class="py-4 text-right">
+        <div class="flex items-center justify-end gap-2">
+          <div class="w-2 h-2 rounded-full ${dot}"></div>
+          <span class="text-xs font-medium">${ltvLabel}</span>
+        </div>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+})();
+</script>
 </body></html>
