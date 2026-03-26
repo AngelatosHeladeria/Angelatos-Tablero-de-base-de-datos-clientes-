@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Angelatos Executive Dashboard | Precision Vitality</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#d2e4ff",
+              "on-primary-fixed": "#410003",
+              "inverse-on-surface": "#f0f1f2",
+              "error": "#ba1a1a",
+              "surface-variant": "#e1e3e4",
+              "secondary-fixed-dim": "#b5c8df",
+              "primary": "#a60012",
+              "on-primary-fixed-variant": "#93000e",
+              "on-tertiary-fixed": "#001c37",
+              "outline": "#926e6b",
+              "on-primary": "#ffffff",
+              "on-surface": "#191c1d",
+              "surface-container-high": "#e7e8e9",
+              "surface-bright": "#f8f9fa",
+              "inverse-primary": "#ffb4ac",
+              "on-secondary": "#ffffff",
+              "primary-container": "#d3081c",
+              "primary-fixed-dim": "#ffb4ac",
+              "on-error": "#ffffff",
+              "on-background": "#191c1d",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#d9dadb",
+              "on-primary-container": "#ffe4e0",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#edeeef",
+              "surface": "#f8f9fa",
+              "inverse-surface": "#2e3132",
+              "on-tertiary-container": "#dfebff",
+              "secondary-container": "#cfe2f9",
+              "primary-fixed": "#ffdad6",
+              "surface-tint": "#c00017",
+              "tertiary": "#005390",
+              "on-secondary-container": "#526478",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#00497e",
+              "on-surface-variant": "#5d3f3c",
+              "on-secondary-fixed": "#091d2e",
+              "outline-variant": "#e7bdb8",
+              "secondary-fixed": "#d1e4fb",
+              "on-secondary-fixed-variant": "#36485b",
+              "tertiary-fixed-dim": "#a0caff",
+              "surface-container-low": "#f3f4f5",
+              "on-error-container": "#93000a",
+              "background": "#f8f9fa",
+              "secondary": "#4e6073",
+              "surface-container-highest": "#e1e3e4",
+              "tertiary-container": "#006cb8"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body selection:bg-primary/10">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-72 fixed left-0 top-0 z-40 bg-[#f8f9fa] dark:bg-slate-950 shadow-[20px_0_40px_rgba(25,28,29,0.02)] flex flex-col py-8 font-['Manrope'] antialiased tracking-tight">
+<!-- Brand Header -->
+<div class="px-10 mb-12 flex items-center gap-3">
+<img alt="Angelatos Logo" class="h-10 w-auto object-contain" data-alt="high-end minimalist logo for a luxury food brand featuring elegant serif typography and a subtle red emblem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6lyHOc-z1D4NWH_WKPOtyhBpkX74iB2twcLBzBP0mgnxNccIIHj-PvuD1y7gynm7csajF_8eWP19JRtAgAVieXF1Rmsc9i1Pqcw4NH6wJHXKwEKxrnXfys4n2ygVBAtK09A2FnXVGEV-XgOmbSqPD5VmqVsJHOIjzDwapNE9wKx9OBZy_2oO-2oRM-cU-Ymsl9lZqo1mvQUc3jR6EMxhB6Cv7tt3EcWujs92NKrash1-g3QF1pOvDKJCN9uHnVz9hpPBnhMbV1kXQ"/>
+<div class="flex flex-col">
+<span class="text-2xl font-black tracking-tighter text-[#191c1d] dark:text-white">Angelatos</span>
+<span class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60 font-bold">Precision Vitality</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-[#a60012] dark:text-red-500 font-bold bg-[#ffffff] dark:bg-slate-800 rounded-l-full ml-4 py-4 px-6 border-l-4 border-[#a60012]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Command Center</span>
+</a>
+<a class="flex items-center gap-4 text-[#4e6073] dark:text-slate-400 font-medium py-4 px-10 hover:text-[#a60012] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Revenue Intel</span>
+</a>
+<a class="flex items-center gap-4 text-[#4e6073] dark:text-slate-400 font-medium py-4 px-10 hover:text-[#a60012] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span>Volume Analytics</span>
+</a>
+<a class="flex items-center gap-4 text-[#4e6073] dark:text-slate-400 font-medium py-4 px-10 hover:text-[#a60012] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span>Fleet Status</span>
+</a>
+<a class="flex items-center gap-4 text-[#4e6073] dark:text-slate-400 font-medium py-4 px-10 hover:text-[#a60012] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<!-- CTA -->
+<div class="px-8 mt-auto">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-4 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform active:scale-95">
+                New Report
+            </button>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-72 h-20 z-30 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-[#191c1d]/5 dark:border-white/5 flex justify-between items-center px-10 font-['Manrope'] font-semibold">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold text-on-surface">Executive Dashboard</h1>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#a60012] border-b-2 border-[#a60012] pb-1" href="#">Overview</a>
+<a class="text-[#4e6073] dark:text-slate-400 hover:text-[#191c1d] dark:hover:text-white transition-colors" href="#">Regional</a>
+<a class="text-[#4e6073] dark:text-slate-400 hover:text-[#191c1d] dark:hover:text-white transition-colors" href="#">Yearly</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/40" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 w-64 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" placeholder="Global search..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full p-2 transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white"></span>
+</button>
+<button class="hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant/20 ml-2 cursor-pointer">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="professional executive portrait of a man in a tailored dark suit with clean lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwEqoXqOch4NXPHz0daC7M7IGJY1WqzTknE6MgP2B7lrgxEcudnADALDuOl4ulSpcKsKRAY6DWQ-mTgjTOfEE9NY9502XMc7YO_U3VfIvhIvSP2jbA4FBXlXKq8PVKVo_Q9y3crqum7wqYgOxJRMoAqnguTVaKmtMO53u2h2J6qqH0AnQT-CNfVQxSJ7QkY0DYw0o8ZQ0G6jrIB5teV9AbC7Y6wpjTF8FxB-V1ExWjhg46k5vVIrQ0ONogeoCOL2kaj8MWnXFlSsXQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-72 pt-28 px-10 pb-20 max-w-[1600px]">
+<!-- Dashboard Header Context -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<p class="text-primary font-bold tracking-widest text-xs uppercase mb-1">Portfolio performance</p>
+<h2 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface italic">Client Intelligence Analysis</h2>
+</div>
+<div class="flex gap-4">
+<button class="px-5 py-2 rounded-lg bg-surface-container-highest/50 text-on-surface font-semibold text-sm flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+                    Last 30 Days
+                </button>
+<button class="px-5 py-2 rounded-lg bg-primary text-on-primary font-semibold text-sm flex items-center gap-2 shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="file_download">file_download</span>
+                    Export PDF
+                </button>
+</div>
+</div>
+<!-- KPI Section: 3 Large Anchors -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<!-- KPI 1: Total Clients -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-primary/5 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">+12% vs LY</span>
+</div>
+<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Total Active Clients</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">1,284</span>
+<span class="text-on-surface-variant/40 text-sm font-medium">Entities</span>
+</div>
+<div class="mt-6 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[78%]" style="width: 78.5%;"></div>
+</div>
+</div>
+<!-- KPI 2: Average Ticket -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-primary/5 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+</div>
+<span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">Target: $15k</span>
+</div>
+<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Average Ticket Value</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">$12,500</span>
+<span class="text-on-surface-variant/40 text-sm font-medium">USD</span>
+</div>
+<div class="mt-6 flex items-center gap-2">
+<span class="text-xs text-on-surface-variant/60 font-medium italic">Efficiency optimization active</span>
+</div>
+</div>
+<!-- KPI 3: Best Month -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-primary/5 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="stars" data-weight="fill" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+<h3 class="text-on-surface-variant font-semibold text-sm mb-1">Peak Performance Cycle</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">December</span>
+</div>
+<div class="mt-6 text-on-surface-variant text-sm font-medium">
+                    Consistently driving <span class="text-primary font-bold">22%</span> of annual revenue.
+                </div>
+</div>
+</div>
+<!-- Bento Grid Visualization Section -->
+<div class="grid grid-cols-12 gap-8">
+<!-- High Consumption Frequency (Daily/Weekly) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)]">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h4 class="text-xl font-headline font-extrabold text-on-surface">Consumption Frequency Leaderboard</h4>
+<p class="text-on-surface-variant text-sm mt-1 italic">High-velocity items tracked by daily/weekly volume.</p>
+</div>
+<div class="flex gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+</div>
+</div>
+<!-- Mock Chart Canvas with Tailwind representation -->
+<div class="relative h-[300px] w-full flex items-end gap-6 px-4">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="border-t border-outline-variant/10 w-full h-0"></div>
+<div class="border-t border-outline-variant/10 w-full h-0"></div>
+<div class="border-t border-outline-variant/10 w-full h-0"></div>
+<div class="border-t border-outline-variant/10 w-full h-0"></div>
+<div class="border-t border-outline-variant/20 w-full h-0"></div>
+</div>
+<!-- Bars -->
+<div class="flex-1 flex flex-col justify-end group cursor-pointer">
+<div class="bg-primary/90 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 90%;"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Signature Pasta</p>
+</div>
+<div class="flex-1 flex flex-col justify-end group cursor-pointer">
+<div class="bg-primary/70 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 75%;"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Vitality Salad</p>
+</div>
+<div class="flex-1 flex flex-col justify-end group cursor-pointer">
+<div class="bg-primary/50 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 82%;"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Ribeye Prime</p>
+</div>
+<div class="flex-1 flex flex-col justify-end group cursor-pointer">
+<div class="bg-primary/40 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 60%;"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Atlantic Salmon</p>
+</div>
+<div class="flex-1 flex flex-col justify-end group cursor-pointer">
+<div class="bg-primary/30 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 45%;"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Wild Mushroom</p>
+</div>
+<div class="flex-1 flex flex-col justify-end group cursor-pointer">
+<div class="bg-primary/20 w-full rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 38%;"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant uppercase tracking-tighter">Greek Mezze</p>
+</div>
+</div>
+</div>
+<!-- Customer Loyalty Split -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low p-10 rounded-xl relative overflow-hidden group">
+<div class="relative z-10 h-full flex flex-col">
+<h4 class="text-xl font-headline font-extrabold text-on-surface mb-2">Visit Elasticity</h4>
+<p class="text-on-surface-variant text-sm mb-8">Split between habitual and occasional patrons.</p>
+<div class="flex-1 flex items-center justify-center py-6">
+<div class="relative w-48 h-48 rounded-full border-[16px] border-primary flex items-center justify-center">
+<!-- Inset Hole for Doughnut feel -->
+<div class="absolute inset-0 border-[16px] border-tertiary border-l-transparent border-t-transparent -rotate-45"></div>
+<div class="flex flex-col items-center">
+<span class="text-3xl font-black text-on-surface">64%</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant/60">High Freq</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 mt-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-xs font-bold text-on-surface-variant">Daily/Weekly</span>
+</div>
+<span class="text-xs font-black">64.2%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<span class="text-xs font-bold text-on-surface-variant">Fortnightly/Monthly</span>
+</div>
+<span class="text-xs font-black">35.8%</span>
+</div>
+</div>
+</div>
+<!-- Background decoration -->
+<div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[200px]" data-icon="pie_chart">pie_chart</span>
+</div>
+</div>
+<!-- Low-Frequency Preferences -->
+<div class="col-span-12 bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)]">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+<div>
+<h4 class="text-xl font-headline font-extrabold text-on-surface uppercase tracking-tight">Acquisition Retention Drivers</h4>
+<p class="text-on-surface-variant text-sm">Dishes that motivate low-frequency visitors to return.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Key Performance Driver</span>
+<span class="text-primary font-black text-lg">Truffle Risotto</span>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/30"></div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Total Occasional Vol.</span>
+<span class="text-on-surface font-black text-lg">4,120 Orders</span>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<!-- Horizontal Data Bar 1 -->
+<div class="space-y-2">
+<div class="flex justify-between items-center text-xs font-black text-on-surface uppercase tracking-tighter px-1">
+<span>Truffle Risotto</span>
+<span>88% Efficiency</span>
+</div>
+<div class="h-8 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-gradient-to-r from-tertiary to-tertiary-container w-[88%] rounded-r-full flex items-center px-4">
+<span class="text-[10px] text-white font-bold">PRIMARY RETENTION HOOK</span>
+</div>
+</div>
+</div>
+<!-- Horizontal Data Bar 2 -->
+<div class="space-y-2">
+<div class="flex justify-between items-center text-xs font-black text-on-surface uppercase tracking-tighter px-1">
+<span>Seared Scallops</span>
+<span>72% Efficiency</span>
+</div>
+<div class="h-8 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-gradient-to-r from-tertiary/70 to-tertiary-container/70 w-[72%] rounded-r-full flex items-center px-4"></div>
+</div>
+</div>
+<!-- Horizontal Data Bar 3 -->
+<div class="space-y-2">
+<div class="flex justify-between items-center text-xs font-black text-on-surface uppercase tracking-tighter px-1">
+<span>Roasted Duck Breast</span>
+<span>65% Efficiency</span>
+</div>
+<div class="h-8 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-gradient-to-r from-tertiary/50 to-tertiary-container/50 w-[65%] rounded-r-full flex items-center px-4"></div>
+</div>
+</div>
+<!-- Horizontal Data Bar 4 -->
+<div class="space-y-2">
+<div class="flex justify-between items-center text-xs font-black text-on-surface uppercase tracking-tighter px-1">
+<span>Artisanal Cheese Board</span>
+<span>42% Efficiency</span>
+</div>
+<div class="h-8 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-gradient-to-r from-tertiary/30 to-tertiary-container/30 w-[42%] rounded-r-full flex items-center px-4"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Deep Dive Data Table Segment -->
+<div class="col-span-12 bg-surface p-10 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-8">
+<h4 class="text-sm font-bold text-on-surface uppercase tracking-widest">Client Transaction Granularity</h4>
+<button class="text-primary text-xs font-black flex items-center gap-1 hover:underline">
+                        View Audit Log <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead>
+<tr class="text-on-surface-variant/40 border-b border-outline-variant/10">
+<th class="pb-4 font-bold uppercase text-[10px]">Client ID</th>
+<th class="pb-4 font-bold uppercase text-[10px]">Tier</th>
+<th class="pb-4 font-bold uppercase text-[10px]">Last Visit</th>
+<th class="pb-4 font-bold uppercase text-[10px]">Frequency</th>
+<th class="pb-4 font-bold uppercase text-[10px]">LTV Prediction</th>
+<th class="pb-4 font-bold uppercase text-[10px] text-right">Revenue</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 font-semibold">#7721-ANG</td>
+<td class="py-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-md text-[10px] font-bold">PLATINUM</span>
+</td>
+<td class="py-4 text-on-surface-variant">2h ago</td>
+<td class="py-4 text-on-surface-variant">Daily</td>
+<td class="py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+<span class="text-xs font-medium">Excellent</span>
+</div>
+</td>
+<td class="py-4 text-right font-black">$42,100</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 font-semibold">#8812-ANG</td>
+<td class="py-4">
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary rounded-md text-[10px] font-bold">SILVER</span>
+</td>
+<td class="py-4 text-on-surface-variant">3d ago</td>
+<td class="py-4 text-on-surface-variant">Weekly</td>
+<td class="py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+<span class="text-xs font-medium">Growth</span>
+</div>
+</td>
+<td class="py-4 text-right font-black">$12,450</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 font-semibold">#1209-ANG</td>
+<td class="py-4">
+<span class="px-2 py-1 bg-on-surface-variant/10 text-on-surface-variant rounded-md text-[10px] font-bold">MEMBER</span>
+</td>
+<td class="py-4 text-on-surface-variant">14d ago</td>
+<td class="py-4 text-on-surface-variant">Monthly</td>
+<td class="py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-amber-500"></div>
+<span class="text-xs font-medium">Stable</span>
+</div>
+</td>
+<td class="py-4 text-right font-black">$3,200</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB: Contextual Reporting -->
+<div class="fixed bottom-10 right-10 z-50">
+<button class="flex items-center gap-3 bg-on-surface text-surface py-4 px-6 rounded-full shadow-2xl hover:bg-primary transition-all duration-300 group">
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500" data-icon="sync">sync</span>
+<span class="font-bold text-sm">Synchronize Fleet Data</span>
+</button>
+</div>
+</body></html>
