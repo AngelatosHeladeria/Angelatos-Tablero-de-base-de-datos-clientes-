@@ -82,8 +82,9 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface antialiased font-body selection:bg-primary/10">
+<div id="sidebar-overlay" class="fixed inset-0 bg-black/40 z-30 lg:hidden hidden" onclick="toggleSidebar()"></div>
 <!-- SideNavBar Shell -->
-<aside class="h-screen w-72 fixed left-0 top-0 z-40 bg-[#f8f9fa] dark:bg-slate-950 shadow-[20px_0_40px_rgba(25,28,29,0.02)] flex flex-col py-8 font-['Manrope'] antialiased tracking-tight">
+<aside id="sidebar" class="h-screen w-72 fixed left-0 top-0 z-40 bg-[#f8f9fa] dark:bg-slate-950 shadow-[20px_0_40px_rgba(25,28,29,0.02)] flex flex-col py-8 font-['Manrope'] antialiased tracking-tight transition-transform duration-300 -translate-x-full lg:translate-x-0">
 <!-- Brand Header -->
 <div class="px-10 mb-12 flex items-center gap-3">
 <img alt="Angelatos Logo" class="h-10 w-auto object-contain" data-alt="high-end minimalist logo for a luxury food brand featuring elegant serif typography and a subtle red emblem" src="https://i.ibb.co/NBT4FwK/Whats-App-Image-2026-03-26-at-4-18-10-PM.jpg"/>
@@ -123,26 +124,29 @@
 </div>
 </aside>
 <!-- TopAppBar Shell -->
-<header class="fixed top-0 right-0 left-72 h-20 z-30 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-[#191c1d]/5 dark:border-white/5 flex justify-between items-center px-10 font-['Manrope'] font-semibold">
-<div class="flex items-center gap-8">
-<h1 class="text-xl font-bold text-on-surface">Dashboard Ejecutivo</h1>
+<header class="fixed top-0 right-0 left-0 lg:left-72 h-16 lg:h-20 z-30 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-[#191c1d]/5 dark:border-white/5 flex justify-between items-center px-4 lg:px-10 font-['Manrope'] font-semibold">
+<div class="flex items-center gap-2 lg:gap-8">
+<button id="hamburger" class="lg:hidden p-2 rounded-lg hover:bg-surface-container transition-colors" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-base lg:text-xl font-bold text-on-surface">Dashboard Ejecutivo</h1>
 <nav class="hidden md:flex gap-6">
 <a class="text-[#a60012] border-b-2 border-[#a60012] pb-1" href="#">Overview</a>
 <a class="text-[#4e6073] dark:text-slate-400 hover:text-[#191c1d] dark:hover:text-white transition-colors" href="#">Regional</a>
 <a class="text-[#4e6073] dark:text-slate-400 hover:text-[#191c1d] dark:hover:text-white transition-colors" href="#">Yearly</a>
 </nav>
 </div>
-<div class="flex items-center gap-6">
-<div class="relative group">
+<div class="flex items-center gap-2 md:gap-6">
+<div class="relative group hidden md:block">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/40" data-icon="search">search</span>
-<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 w-64 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" placeholder="Global search..." type="text"/>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 w-40 lg:w-64 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" placeholder="Global search..." type="text"/>
 </div>
 <div class="flex items-center gap-3">
 <button class="hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full p-2 transition-colors relative">
 <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
 <span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white"></span>
 </button>
-<button class="hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full p-2 transition-colors">
+<button class="hidden sm:block hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full p-2 transition-colors">
 <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
 </button>
 <div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant/20 ml-2 cursor-pointer">
@@ -152,28 +156,28 @@
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="ml-72 pt-28 px-10 pb-20 max-w-[1600px]">
+<main class="ml-0 lg:ml-72 pt-20 lg:pt-28 px-4 sm:px-6 lg:px-10 pb-20 max-w-[1600px]">
 <!-- Dashboard Header Context -->
-<div class="mb-10 flex justify-between items-end">
+<div class="mb-10 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4">
 <div>
 <p class="text-primary font-bold tracking-widest text-xs uppercase mb-1">Rendimiento del portafolio</p>
-<h2 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface italic">Análisis de Inteligencia de Clientes</h2>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-headline font-extrabold tracking-tight text-on-surface italic">Análisis de Inteligencia de Clientes</h2>
 </div>
-<div class="flex gap-4">
-<button class="px-5 py-2 rounded-lg bg-surface-container-highest/50 text-on-surface font-semibold text-sm flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<div class="flex gap-3 flex-wrap">
+<button class="px-4 py-2 rounded-lg bg-surface-container-highest/50 text-on-surface font-semibold text-sm flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
 <span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
-                    Últimos 30 Días
+<span class="hidden sm:inline">Últimos 30 Días</span>
                 </button>
-<button class="px-5 py-2 rounded-lg bg-primary text-on-primary font-semibold text-sm flex items-center gap-2 shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-semibold text-sm flex items-center gap-2 shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
 <span class="material-symbols-outlined text-lg" data-icon="file_download">file_download</span>
-                    Export PDF
+<span class="hidden sm:inline">Export PDF</span>
                 </button>
 </div>
 </div>
 <!-- KPI Section: 3 Large Anchors -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
 <!-- KPI 1: Total Clients -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="bg-surface-container-lowest p-5 md:p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
 <div class="flex justify-between items-start mb-6">
 <div class="p-3 bg-primary/5 rounded-lg text-primary">
 <span class="material-symbols-outlined" data-icon="group">group</span>
@@ -182,7 +186,7 @@
 </div>
 <h3 class="text-on-surface-variant font-semibold text-sm mb-1">Total Clientes Activos</h3>
 <div class="flex items-baseline gap-2">
-<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">87</span>
+<span class="text-4xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">87</span>
 <span class="text-on-surface-variant/40 text-sm font-medium">Clientes</span>
 </div>
 <div class="mt-6 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
@@ -190,7 +194,7 @@
 </div>
 </div>
 <!-- KPI 2: Plato más pedido -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="bg-surface-container-lowest p-5 md:p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
 <div class="flex justify-between items-start mb-6">
 <div class="p-3 bg-primary/5 rounded-lg text-primary">
 <span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
@@ -206,7 +210,7 @@
 </div>
 </div>
 <!-- KPI 3: Frecuencia dominante -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="bg-surface-container-lowest p-5 md:p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)] border-l-4 border-primary group hover:translate-y-[-4px] transition-transform duration-300">
 <div class="flex justify-between items-start mb-6">
 <div class="p-3 bg-primary/5 rounded-lg text-primary">
 <span class="material-symbols-outlined" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
@@ -214,7 +218,7 @@
 </div>
 <h3 class="text-on-surface-variant font-semibold text-sm mb-1">Frecuencia Dominante</h3>
 <div class="flex items-baseline gap-2">
-<span class="text-5xl font-headline font-black text-on-surface tracking-tighter">Semanal</span>
+<span class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">Semanal</span>
 </div>
 <div class="mt-6 text-on-surface-variant text-sm font-medium">
                     Representa el <span class="text-primary font-bold">44.8%</span> de la base de clientes (39 personas).
@@ -222,9 +226,9 @@
 </div>
 </div>
 <!-- Bento Grid Visualization Section -->
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-4 md:gap-8">
 <!-- High Consumption Frequency (Daily/Weekly) -->
-<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)]">
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-5 md:p-10 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)]">
 <div class="flex justify-between items-center mb-10">
 <div>
 <h4 class="text-xl font-headline font-extrabold text-on-surface">Ranking de Platos por Popularidad</h4>
@@ -235,12 +239,12 @@
 <span class="w-3 h-3 rounded-full bg-tertiary"></span>
 </div>
 </div>
-<div class="relative h-[300px] w-full">
+<div class="relative h-[200px] sm:h-[260px] md:h-[300px] w-full">
 <canvas id="chartBarPlatos"></canvas>
 </div>
 </div>
 <!-- Customer Loyalty Split -->
-<div class="col-span-12 lg:col-span-4 bg-surface-container-low p-10 rounded-xl relative overflow-hidden group">
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low p-5 md:p-10 rounded-xl relative overflow-hidden group">
 <div class="relative z-10 h-full flex flex-col">
 <h4 class="text-xl font-headline font-extrabold text-on-surface mb-2">Elasticidad de Visita</h4>
 <p class="text-on-surface-variant text-sm mb-4">Distribución de frecuencia de consumo.</p>
@@ -284,7 +288,7 @@
 </div>
 </div>
 <!-- Low-Frequency Preferences -->
-<div class="col-span-12 bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)]">
+<div class="col-span-12 bg-surface-container-lowest p-5 md:p-10 rounded-xl shadow-[0_20px_40px_rgba(25,28,29,0.04)]">
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
 <div>
 <h4 class="text-xl font-headline font-extrabold text-on-surface uppercase tracking-tight">Platos de Retención (Baja Frecuencia)</h4>
@@ -348,7 +352,7 @@
 </div>
 </div>
 <!-- Deep Dive Data Table Segment -->
-<div class="col-span-12 bg-surface p-10 rounded-xl border border-outline-variant/10">
+<div class="col-span-12 bg-surface p-5 md:p-10 rounded-xl border border-outline-variant/10">
 <div class="flex justify-between items-center mb-8">
 <h4 class="text-sm font-bold text-on-surface uppercase tracking-widest">Granularidad de Transacciones por Cliente</h4>
 <button class="text-primary text-xs font-black flex items-center gap-1 hover:underline">
@@ -375,10 +379,10 @@
 </div>
 </main>
 <!-- FAB: Contextual Reporting -->
-<div class="fixed bottom-10 right-10 z-50">
-<button class="flex items-center gap-3 bg-on-surface text-surface py-4 px-6 rounded-full shadow-2xl hover:bg-primary transition-all duration-300 group">
+<div class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50">
+<button class="flex items-center gap-3 bg-on-surface text-surface py-3 px-4 lg:py-4 lg:px-6 rounded-full shadow-2xl hover:bg-primary transition-all duration-300 group">
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500" data-icon="sync">sync</span>
-<span class="font-bold text-sm">Sincronizar Datos</span>
+<span class="hidden sm:inline font-bold text-sm">Sincronizar Datos</span>
 </button>
 </div>
 
@@ -565,6 +569,14 @@ const platosOrdenados = Object.entries(conteoPlatos)
     }
   });
 })();
+
+// ─── SIDEBAR RESPONSIVE TOGGLE ─────────────────────────────────────────────
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  sidebar.classList.toggle('-translate-x-full');
+  overlay.classList.toggle('hidden');
+}
 
 // ─── TABLA DE CLIENTES ───────────────────────────────────────────────────────
 (function() {
